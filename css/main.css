@@ -1,0 +1,17 @@
+.main-content {
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 168, 255, 0.5);
+}
+
+.header {
+  padding: 5px 0;
+  background-color: rgba(0, 168, 255, 0.4);
+}
+
+.heroes {
+  padding: 100px 0 !important;
+  padding-top: 130px !important;
+}
+
+/*# sourceMappingURL=main.css.map */

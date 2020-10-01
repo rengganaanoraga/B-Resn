@@ -1,0 +1,38 @@
+{
+	"name": "coba",
+	"description": "Development files for the Eventss For Good primary theme.",
+	"gotERRORWhenRunScriptWatch": "please visit this link https://stackoverflow.com/questions/53461626/problem-running-parallelshell-nodejs-script",
+	"license": "GPL-2.0-or-later",
+	"devDependencies": {
+		"autoprefixer": "^9.8.6",
+		"browser-sync": "^2.26.12",
+		"clean-css-cli": "^4.3.0",
+		"node-sass": "^4.14.1",
+		"onchange": "^3.3.0",
+		"parallelshell": "^3.0.2",
+		"sass": "^1.26.10"
+	},
+	"scripts": {
+		"autoprefixer": "postcss css/main.css --replace --use autoprefixer",
+		"scss": "sass --watch scss:css",
+		"build:css": "npm run scss && npm run autoprefixer",
+		"watch:css": "onchange \"scss/**/*.scss\" -- npm run build:css",
+		"serve": "browser-sync start --proxy \"localhost/B-resn\" --port 8000 --files \"*.html, css/*.css, scss/**/*.scss, js/script.js\"",
+		"watch:parallel": "parallelshell \"npm run serve\" \"npm run watch:css\"",
+		"watch": "npm run watch:parallel",
+		"css-minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output css/main.min.css css/main.css"
+	},
+	"browserslist": [
+		"> 1%",
+		"ie >= 11",
+		"last 1 Android versions",
+		"last 1 ChromeAndroid versions",
+		"last 2 Chrome versions",
+		"last 2 Firefox versions",
+		"last 2 Safari versions",
+		"last 2 iOS versions",
+		"last 2 Edge versions",
+		"last 2 Opera versions"
+	],
+	"dependencies": {}
+}
